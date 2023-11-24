@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List of Bills</title>
+</head>
+<body>
+    <h1>List of Bills</h1>
+
+    <table border="1">
+        <tr>
+            <th>Bill ID</th>
+            <th>Issue Date</th>
+            <th>Service</th>
+            <th>Quantity</th>
+            <th>Cost</th>
+            <th>SGST</th>
+            <th>CGST</th>
+            <th>Total Amount</th>
+            <th>Status</th>
+            <th>Vendor/Contractor ID</th>
+            <th>Project ID</th>
+            <th>Balance</th>
+        </tr>
+        {% for bill in bills %}
+        <tr>
+            <td>{{ bill.Bill_ID }}</td>
+            <td>{{ bill.Issue_Date }}</td>
+            <td>{{ bill.Service }}</td>
+            <td>{{ bill.Quantity }}</td>
+            <td>{{ bill.Cost }}</td>
+            <td>{{ bill.SGST }}</td>
+            <td>{{ bill.CGST }}</td>
+            <td>{{ bill.Total_Amount }}</td>
+            <td>{{ bill.Status }}</td>
+            <td>{{ bill.VendorContractor_ID }}</td>
+            <td>{{ bill.Project_ID }}</td>
+            <td>{{ bill.Balance }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{{ url_for('add_bill') }}">Add a New Bill</a>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add a New Bill</title>
+</head>
+<body>
+    <h1>Add a New Bill</h1>
+
+    <form method="POST" action="{{ url_for('add_bill') }}">
+        <label for="issue_date">Issue Date:</label>
+        <input type="date" name="issue_date" required><br>
+
+        <label for="service">Service:</label>
+        <input type="text" name="service" required><br>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" required><br>
+
+        <label for="cost">Cost:</label>
+        <input type="number" name="cost" step="0.01" required><br>
+
+        <label for="sgst">SGST:</label>
+        <input type="number" name="sgst" step="0.01" required><br>
+
+        <label for="cgst">CGST:</label>
+        <input type="number" name="cgst" step="0.01" required><br>
+
+        <label for="total_amount">Total Amount:</label>
+        <input type="number" name="total_amount" step="0.01" required><br>
+
+        <label for="status">Status:</label>
+        <input type="text" name="status" required><br>
+
+        <label for="vendor_contractor_id">Vendor/Contractor ID:</label>
+        <input type="number" name="vendor_contractor_id" required><br>
+
+        <label for="project_id">Project ID:</label>
+        <input type="number" name="project_id" required><br>
+
+        <label for="balance">Balance:</label>
+        <input type="number" name="balance" step="0.01" required><br>
+
+        <input type="submit" value="Add Bill">
+    </form>
+
+    <a href="{{ url_for('bills') }}">Back to List of Bills</a>
+</body>
+</html>
